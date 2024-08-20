@@ -2,6 +2,7 @@ class classtwo{
     constructor(
         public arg1:string,public arg2:string,public arg3:string)
     {}
+    //no need to initialize they will automatically get initialized
 }
 
 let obj1:classtwo=new classtwo("Angular","SpringBoot","Oracle");
@@ -21,3 +22,19 @@ Front End ==>  React    Back End  ==>  DotnetWebAPI  Database ==>  SQLServer
 
 
 */
+
+class Prac
+{
+
+    constructor(public one:String,public two:String)
+    {}
+
+}
+
+//main()
+
+var obj3:Prac = new Prac("spring boot","jquery");
+
+console.log(obj3.one);
+
+console.log(obj3.two);

@@ -46,3 +46,26 @@ Class1 ==> Function One
 Class2 ==> Function Two
 
 */
+
+
+class A
+{
+    public print():string
+    {
+       return "printing";
+    }
+}
+
+class B extends A
+{
+    public noPrint():string
+    {
+        return "not printing";
+    }
+}
+
+//main()
+
+var obj5:B = new B();
+
+console.log(obj5.print());
