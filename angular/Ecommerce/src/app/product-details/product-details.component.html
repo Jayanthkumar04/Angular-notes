@@ -1,0 +1,42 @@
+<h1>PRODUCTS LIST</h1>
+<app-product-count [all]="getAllCount()" [electric]="getElectricCount()" [electronic]="getElectronicCount()"
+  [grocery]="getGroceryCount()" (countRadioButtonSelection)="onRadioChange2($event)">
+
+</app-product-count>
+<table>
+
+  <thead>
+
+    <tr>
+
+      <th>productName</th>
+      <th>quantity</th>
+      <th>price</th>
+      <th>discount</th>
+      <th>Actual Price</th>
+      <th>expiry date</th>
+      <th>rating</th>
+      <th>type</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <ng-container *ngFor="let p of products; trackBy:trackByCode;index:number">
+
+      <tr *ngIf="selectedValue==p.type || selectedValue=='all'">
+
+        <td>{{p.prodname}}</td>
+        <td>{{p.qty}}</td>
+        <td>{{p.price}}</td>
+        <td>{{p.discount}}</td>
+        <td>{{p.price|actualprice:p.discount}}</td>
+        <td>{{p.expirydate}}</td>
+        <td>{{p.rating}}</td>
+        <td>{{p.type}}</td>
+
+      </tr>
+    </ng-container>
+
+  </tbody>
+</table>
+<button id=" btn" (click)="onrefresh()">REFRESH BUTTON</button>

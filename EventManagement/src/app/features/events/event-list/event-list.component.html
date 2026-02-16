@@ -1,0 +1,24 @@
+<h2>Events</h2>
+<button routerLink="/events/add">Add Event</button>
+<table border="1">
+  <tr>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Date</th>
+    <th>Location</th>
+    <th>Action</th>
+  </tr>
+
+  <tr *ngFor="let e of eventList">
+
+    <td>{{e.eventName }}</td>
+    <td>{{ e.price }}</td>
+    <td>{{ e.eventDate | date:'dd-MMM-yyyy hh:mm a' }}</td>
+    <td>{{ e.location }}</td>
+    <td>
+
+      <button (click)="deleteEvent(e.eventId!)">Cancel</button>
+      <button routerLink="/events/edit/{{e.eventId}}">Edit</button>
+    </td>
+  </tr>
+</table>

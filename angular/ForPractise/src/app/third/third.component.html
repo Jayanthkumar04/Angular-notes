@@ -1,0 +1,39 @@
+<app-f-count>
+
+</app-f-count>
+<table>
+
+  <thead>
+
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Address</th>
+      <th>Gender</th>
+    </tr>
+
+
+  </thead>
+
+  <tbody>
+
+    <tr *ngFor="let t of test">
+
+      <td>
+        <p>{{t.uName|reverse}}</p>
+      </td>
+      <td>
+        <p>{{t.uAge}}</p>
+      </td>
+      <td>
+        <p>{{t.uAddress}}</p>
+      </td>
+      <td>
+        <p>{{t.uGender}}</p>
+      </td>
+
+
+    </tr>
+  </tbody>
+
+</table>

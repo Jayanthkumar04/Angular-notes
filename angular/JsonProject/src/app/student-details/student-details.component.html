@@ -1,0 +1,17 @@
+<h1>STUDENT DETAILS</h1>
+<div *ngFor="let s of students">
+  <h3>Name: {{s.stuName|uppercase|title:s.gender}}</h3>
+  <h3>Age:{{s.stuAge}}</h3>
+  <h3>Gender:{{s.gender}}</h3>
+
+  <div [ngSwitch]="s.dept">
+
+    <h3> Placement:</h3>
+    <h3 *ngSwitchCase='1'>Placed</h3>
+    <h3 *ngSwitchCase='2'>Not Placed</h3>
+    <h3 *ngSwitchDefault>others</h3>
+  </div>
+
+
+  <br><br>
+</div>

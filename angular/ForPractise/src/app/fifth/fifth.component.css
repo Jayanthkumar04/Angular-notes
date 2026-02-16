@@ -1,0 +1,12 @@
+table{
+  color:blue;
+  border-collapse: collapse;
+}
+td{
+  border:1px solid green;
+  padding:5px;
+}
+th{
+  border:1px solid green;
+  padding:5px;
+}

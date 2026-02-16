@@ -1,0 +1,15 @@
+<div class="container">
+
+  <input type="radio" name="options" value="all" [(ngModel)]="selectedValue" (change)="onRadioChange()">
+  <span>{{"all("+all+")"}}</span>
+
+  <input type="radio" name="options" value="electric" [(ngModel)]="selectedValue" (change)="onRadioChange()">
+  <span>{{"electric("+electric+")"}}</span>
+
+  <input type="radio" name="options" value="electronic" [(ngModel)]="selectedValue" (change)="onRadioChange()">
+  <span>{{"electronic("+electronic+")"}}</span>
+
+  <input type="radio" name="options" value="grocery" [(ngModel)]="selectedValue" (change)="onRadioChange()">
+  <span>{{"grocery("+grocery+")"}}</span>
+
+</div>

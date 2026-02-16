@@ -1,0 +1,22 @@
+table{
+  color:blue;
+  font-family:'Times New Roman', Times, serif;
+  font-size:large;
+  border-collapse: collapse;
+}
+
+td
+{color:blue;
+  border: 1px solid gray;
+  padding:5px;
+}
+
+th{
+  border: 1px solid gray;
+  padding:5px;
+}
+tr
+{
+  border: 1px solid gray;
+  padding:5px;
+}

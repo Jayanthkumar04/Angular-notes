@@ -1,0 +1,46 @@
+<h2>{{ isEditMode ? 'Edit Event' : 'Add Event' }}</h2>
+
+<form [formGroup]="eventForm" (ngSubmit)="submit()">
+
+  <!-- Event Name -->
+  <label>Event Name</label>
+  <input type="text" formControlName="eventName">
+  <div *ngIf="eventForm.get('eventName')?.touched && eventForm.get('eventName')?.invalid">
+    Event name is required
+  </div>
+
+  <!-- Price -->
+  <label>Price</label>
+  <input type="number" formControlName="price">
+  <div *ngIf="eventForm.get('price')?.touched && eventForm.get('price')?.invalid">
+    Price is required
+  </div>
+
+  <!-- Event Date -->
+  <label>Event Date</label>
+  <input type="datetime-local" formControlName="eventDate">
+  <div *ngIf="eventForm.get('eventDate')?.touched && eventForm.get('eventDate')?.invalid">
+    Event date is required
+  </div>
+
+  <!-- Location -->
+  <label>Location</label>
+  <input type="text" formControlName="location">
+
+  <!-- More Info -->
+  <label>More Info</label>
+  <textarea formControlName="moreInfo"></textarea>
+
+  <!-- Add user -->
+  <label>User</label>
+
+  <select formControlName="user">
+    <option *ngFor="let user of users" [ngValue]="user">{{user.name}}</option>
+  </select>
+
+  <!-- Submit -->
+  <button type="submit" [disabled]="eventForm.invalid">
+    {{ isEditMode ? 'Update' : 'Save' }}
+  </button>
+
+</form>

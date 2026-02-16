@@ -1,0 +1,20 @@
+<form #customerForm="ngForm" (ngSubmit)="addCustomer(customerForm)">
+  <div class="mb-3">
+    <label for="name" class="form-label">Name</label>
+    <input type="text" class="form-control" id="name" placeholder="Name" name="name" [(ngModel)]="customer.name">
+  </div>
+  <div class="mb-3">
+    <label for="Email" class="form-label">Email</label>
+    <input type="text" class="form-control" id="Email" name="Email" placeholder="Email" [(ngModel)]="customer.email">
+  </div>
+  <div class="mb-3">
+    <label for="Phone" class="form-label">Contact number</label>
+    <input type="text" class="form-control" id="Phone" name="Phone" placeholder="Contact number" [(ngModel)]="customer.phone">
+  </div>
+  <div class="mb-3">
+    <label for="City" class="form-label">City</label>
+    <input type="text" class="form-control" id="City" name="City" placeholder="City" [(ngModel)]="customer.city">
+  </div>
+  <button type="submit" [disabled]="customerForm.invalid" class=" btn btn-primary">add new customer</button>
+
+</form>

@@ -1,0 +1,41 @@
+<app-f-count [all]="allCount()" [male]="maleCount()" [female]="femaleCount()"
+  (countRadioButton)="onFriendChange($event)">
+</app-f-count>
+<table>
+
+  <thead>
+
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Address</th>
+      <th>Gender</th>
+    </tr>
+
+
+  </thead>
+
+  <tbody>
+
+    <tr *ngFor="let t of friends; trackBy:trackByCode;let i=index">
+
+      <td>
+        <p>{{t.name}}</p>
+      </td>
+      <td>
+        <p>{{t.age}}</p>
+      </td>
+      <td>
+        <p>{{t.address}}</p>
+      </td>
+      <td>
+        <p>{{t.gender}}</p>
+      </td>
+
+
+    </tr>
+  </tbody>
+
+</table>
+
+<button (click)="getLatestData()">get latest data</button>

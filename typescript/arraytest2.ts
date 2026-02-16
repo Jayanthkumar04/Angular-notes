@@ -46,5 +46,16 @@ num2.forEach(
 
 )
 
+console.log("new test");
+
+var test:number[]=[10,20,30,40];
+
+test.forEach((element,index)=>{
+
+    console.log(index+1,element);
+
+})
+
+
 
 

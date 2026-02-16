@@ -1,0 +1,19 @@
+<div class="payment-container">
+  <h2>Student Course Payment</h2>
+
+  <form [formGroup]="paymentForm">
+
+    <input type="text" placeholder="Name" formControlName="name">
+    <input type="email" placeholder="Email" formControlName="email">
+    <input type="text" placeholder="Phone Number" formControlName="phno">
+    <input type="text" placeholder="Course" formControlName="course">
+    <input type="number" placeholder="Amount" formControlName="amount">
+
+    <button type="button"
+            (click)="makePayment()"
+            [disabled]="isLoading">
+      {{ isLoading ? 'Processing...' : 'Pay Now' }}
+    </button>
+
+  </form>
+</div>

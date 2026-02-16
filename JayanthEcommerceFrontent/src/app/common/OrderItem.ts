@@ -1,0 +1,7 @@
+export interface OrderItem {
+    productId: number;
+    quantity: number;
+    unitPrice: number;
+    imageUrl: string;
+  }
+  

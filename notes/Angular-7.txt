@@ -1,0 +1,7 @@
+===========
+ng-container
+===========
+
+1)in one dom element we cant use two conditions so we need to use ng-container
+
+2)

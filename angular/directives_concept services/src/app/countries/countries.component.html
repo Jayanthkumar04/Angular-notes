@@ -1,0 +1,29 @@
+<!-- <h1 appRenderer>REST API FOR COUNTRIES REST API</h1>
+
+<p appHighlight>hii prinddd</p>
+
+<h3 appHostListen>i am an event listener</h3>
+
+<h3 appHostBind>app bining bayya</h3> -->
+
+<h1>REST API FOR COUNTRIES REST API</h1>
+<table>
+
+  <thead>
+    <th>SNO</th>
+    <th>Name</th>
+    <th>Population</th>
+    <th>Native Name</th>
+    <th>Region</th>
+    <th>Flag</th>
+  </thead>
+
+  <tbody *ngFor="let c of result;let i =index">
+    <td>{{i+1}}</td>
+    <td>{{c.name.common}}</td>
+    <td>{{c.population}}</td>
+    <td>{{c.capital}}</td>
+    <td>{{c.region}}</td>
+    <td><img width="150px" height="100px " src="{{c.flags.png}}"></td>
+  </tbody>
+</table>

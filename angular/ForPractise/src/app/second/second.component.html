@@ -1,0 +1,33 @@
+<h1>property binding</h1>
+<button id="btn" [disabled]="answer">CLICK HERE SIRRR</button>
+
+
+<H1>EVENT BINDING</H1>
+
+<input type="text" #inputValue placeholder="answer">
+
+<button id="btn2" (click)="display(inputValue.value)">click here to display</button>
+<h1>answer is :{{ans}}</h1>
+
+
+<h1>TWO WAY BINDING</h1>
+<input type="text" [(ngModel)]="ans2" placeholder="answerrr">
+
+<h1>answer2:{{ans2}}</h1>
+<hr>
+<hr>
+<h1>FRIENDS DETAILS</h1>
+
+<div *ngFor="let f of friends">
+  <h3>Friend Name:{{f.name}}</h3>
+  <h3>Friend CONTACT:{{f.contact}}</h3>
+  <h3>Friend AGE:{{f.age}}</h3>
+  <h3>Friend ADDRESS:{{f.address}}</h3>
+  <div [ngSwitch]="f.girlfriend">
+    <h3 *ngSwitchCase="'yes'">FRIEND GF:True</h3>
+    <h3 *ngSwitchCase="'no'">FRIEND GF:False</h3>
+    <h3 *ngSwitchDefault>FRIEND GF:NA</h3>
+
+  </div>
+  <hr>
+</div>

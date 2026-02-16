@@ -1,0 +1,40 @@
+<table>
+
+  <thead>
+    <tr>
+      <td>employeeId</td>
+      <td>employeeName</td>
+      <td>gender</td>
+      <td>title</td>
+      <td>salary</td>
+      <td>department</td>
+      <td>address</td>
+      <td>date of birth</td>
+    </tr>
+  </thead>
+
+  <tbody>
+    @for(e of employees; track e.empid){
+    <!-- <tr *ngFor="let e of employees;trackBy:trackByEmpid;let i=index"> -->
+    <tr>
+      <td>{{e.empid}}</td>
+      <td>{{e.empname|title:e.gender}}</td>
+      <td>{{e.gender|lowercase}}</td>
+      <td>{{e.title}}</td>
+      <td>{{e.salary|number:'6.3-4'}}</td>
+      <td>{{e.department}}</td>
+      <td>{{e.address|titlecase}}</td>
+      <td>{{e.dob}}</td>
+    </tr>
+    }
+  </tbody>
+
+</table>
+
+<button (click)="getLatestData()">click for new data</button>
+
+<h1>{{date|date:'dd-MM-yy'}}</h1>
+<h1>{{date|date:'dd-MMM-YYYY'}}</h1>
+<h1>{{date|date:'short'}}</h1>
+<h1>{{date|date:'medium'}}</h1>
+<h1>{{date|date:'fullDate'}}</h1>

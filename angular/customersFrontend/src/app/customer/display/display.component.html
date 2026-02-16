@@ -1,0 +1,32 @@
+ <h1 >CUSTOMERS DATA</h1>
+<div>
+
+  <table class="table table-bordered border-danger hover table-success">
+
+    <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>City</th>
+        </tr>
+       
+    </thead>
+
+    <tbody >
+          <tr *ngFor="let c of customers">
+           
+            <td>{{c.id}}</td>
+            <td>{{c.name}}</td>
+            <td>{{c.email}}</td>
+            <td>{{c.phone}}</td>
+            <td>{{c.city}}</td>
+
+          </tr>
+
+    </tbody>
+  
+  </table>
+
+</div>

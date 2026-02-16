@@ -20,10 +20,6 @@ var num_arr = [10, 20, 30, 40, 50];
 num_arr.forEach(function (element, index) {
     console.log('Index is ==> ', index, 'Element is ===>', element);
 });
-var num2 = [22, 33, 44, 55];
-num2.forEach(function (element) {
-    console.log(element);
-});
 /*
 Output:
 
@@ -34,4 +30,13 @@ Index is ==>  3 Element is ===> 40
 Index is ==>  4 Element is ===> 50
 
 
-*/ 
+*/
+var num2 = [22, 33, 44, 55];
+num2.forEach(function (element) {
+    console.log(element);
+});
+console.log("new test");
+var test = [10, 20, 30, 40];
+test.forEach(function (element, index) {
+    console.log(index + 1, element);
+});
