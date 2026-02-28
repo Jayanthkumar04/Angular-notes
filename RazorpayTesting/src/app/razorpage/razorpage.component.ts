@@ -34,25 +34,55 @@ export class RazorpageComponent {
 
   }
 
-  makePayment():void{
-    if(this.paymentForm.invalid){
-      return;
-    }
-
-    this.isLoading = true;
-
-    const orderData:StudentOrder = this.paymentForm.value;
-
-    console.log(orderData);
-    this.paymentService.createOrder(orderData).subscribe(
-      {
-        next:(response) => {
-             
-              console.log(response);
-        }
-      }
-    )
+  makePayment(): void {
+  if (this.paymentForm.invalid) {
+    return;
   }
+
+  this.isLoading = true;
+
+  const orderData: StudentOrder = this.paymentForm.value;
+
+  this.paymentService.createOrder(orderData).subscribe({
+    next: (response) => {
+
+      const options = {
+        key: 'rzp_test_SGsIHYSLIBF1ry',   // same as backend key
+        amount: response.amount * 100,
+        currency: 'INR',
+        name: 'Student Course Payment',
+        description: response.course,
+        order_id: response.razorpayOrderId,
+
+        handler: (paymentResponse: any) => {
+          console.log("Payment Success", paymentResponse);
+
+          this.paymentService.verifyPayment(paymentResponse)
+              .subscribe(res => {
+                 alert("Payment Successful ✅");
+                 this.isLoading = false;
+              });
+        },
+
+        prefill: {
+          name: response.name,
+          email: response.email,
+          contact: response.phno
+        },
+
+        theme: {
+          color: '#3399cc'
+        }
+      };
+
+      const rzp = new Razorpay(options);
+      rzp.open();
+    },
+    error: () => {
+      this.isLoading = false;
+    }
+  });
+}
 
 
 }

@@ -21,4 +21,11 @@ export class PaymentService {
     );
   }
 
+  verifyPayment(data: any): Observable<any> {
+  return this.httpClient.post(
+    `${this.apiUrl}/verify-payment`,
+    data
+  );
+}
+
 }
