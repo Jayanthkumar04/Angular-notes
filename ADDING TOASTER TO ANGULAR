@@ -1,0 +1,100 @@
+1)Install ngx-toastr
+
+Run this in your Angular project:
+
+npm install ngx-toastr@18
+npm install @angular/animations
+
+
+
+2)Add in app.config.ts or app.module.ts
+
+If you are using standalone Angular (Angular 17) add providers like this.
+
+import { provideAnimations } from '@angular/platform-browser/animations';
+import { provideToastr } from 'ngx-toastr';
+
+export const appConfig = {
+  providers: [
+    provideAnimations(),
+    provideToastr({
+      positionClass: 'toast-top-right',
+      timeOut: 4000
+    })
+  ]
+};
+
+
+3)2️⃣ Inject Toastr in Constructor
+constructor(
+  private fb: FormBuilder,
+  private authService: AuthService,
+  private toastr: ToastrService
+) {
+
+  this.registerForm = this.fb.group({
+    name: ['', [Validators.required, Validators.minLength(3)]],
+    email: ['', [Validators.required, Validators.email]]
+  });
+
+}
+
+
+4)Show Toast on Success
+
+Update your register() method.
+
+register(){
+
+  if(this.registerForm.invalid){
+    return;
+  }
+
+  this.authService.registerUser(this.registerForm.value).subscribe({
+
+    next:(response)=>{
+
+      this.toastr.success(
+        "Password sent to your email",
+        "User Registered Successfully"
+      );
+
+      this.registerForm.reset();
+
+    },
+
+    error:(err)=>{
+
+      this.toastr.error(
+        "Something went wrong",
+        "Registration Failed"
+      );
+
+      console.log(err);
+
+    }
+
+  });
+
+}
+
+
+Other Notifications You Can Use
+this.toastr.success("Saved successfully");
+this.toastr.error("Error occurred");
+this.toastr.warning("Check your input");
+this.toastr.info("Information message");
+
+
+
+***********MAIN*****************
+Import Toastr CSS (Very Important)
+
+Open angular.json
+
+Find the styles section and add:
+
+"styles": [
+  "node_modules/ngx-toastr/toastr.css",
+  "src/styles.css"
+]
